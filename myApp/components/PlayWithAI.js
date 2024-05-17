@@ -102,7 +102,7 @@ const PlayWithAI = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="ios-arrow-back" size={32} color="#0f0" />
+        <Ionicons name="arrow-back" size={32} color="#0f0" />
       </TouchableOpacity>
       <Text style={styles.title}>Tic Tac Toe (vs AI)</Text>
       <Text style={styles.turnText}>{winner ? 'Winner: ' + winner : 'Turn: ' + (isXNext ? 'You' : 'AI')}</Text>
