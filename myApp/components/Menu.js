@@ -1,8 +1,6 @@
-// components/Menu.js
-
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import QuitButton from './QuitButton'; // Import the QuitButton component
+import QuitButton from './QuitButton'; 
 
 const Menu = ({ navigation }) => {
   return (
@@ -14,7 +12,7 @@ const Menu = ({ navigation }) => {
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About')}>
         <Text style={styles.buttonText}>About</Text>
       </TouchableOpacity>
-      <QuitButton /> {/* Add the QuitButton component */}
+      <QuitButton /> 
     </View>
   );
 };

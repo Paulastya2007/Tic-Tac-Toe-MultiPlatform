@@ -1,12 +1,9 @@
-// App.js
-
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Menu from './components/Menu';
 import GameModeSelection from './components/GameModeSelection';
 import About from './components/About';
-// Import your future PlayWithAI and PlayWithLocal components when you create them
 import PlayWithAI from './components/PlayWithAI';
 import PlayWithLocal from './components/PlayWithLocal';
 
@@ -21,9 +18,6 @@ export default function App() {
         <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
         <Stack.Screen name="PlayWithLocal" component={PlayWithLocal} options={{ headerShown: false }} />
         <Stack.Screen name="PlayWithAI" component={PlayWithAI} options={{ headerShown: false }} />
-        {/* Add other screens like PlayWithAI and PlayWithLocal here */}
-        {/* <Stack.Screen name="PlayWithAI" component={PlayWithAI} /> */}
-        {/* <Stack.Screen name="PlayWithLocal" component={PlayWithLocal} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

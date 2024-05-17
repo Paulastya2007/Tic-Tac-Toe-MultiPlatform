@@ -1,5 +1,3 @@
-// components/PlayWithAI.js
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,11 +9,10 @@ const PlayWithAI = ({ navigation }) => {
 
   useEffect(() => {
     if (!isXNext) {
-      // AI's turn
       const bestMove = getBestMove();
       handlePress(bestMove);
     }
-  }, [board]); // Trigger AI move whenever the board changes
+  }, [board]);
 
   const handlePress = (index) => {
     if (board[index] || winner) return;
@@ -47,7 +44,7 @@ const PlayWithAI = ({ navigation }) => {
     }
 
     if (squares.every((square) => square !== null)) {
-      return 'Draw'; // If all squares are filled but no winner, it's a draw
+      return 'Draw';
     }
 
     return null;
@@ -75,27 +72,26 @@ const PlayWithAI = ({ navigation }) => {
   const getBestMove = () => {
     const availableMoves = getAvailableMoves(board);
 
-    // Check for winning move
     for (let i = 0; i < availableMoves.length; i++) {
       const move = availableMoves[i];
       const newBoard = [...board];
-      newBoard[move] = 'O'; // AI's move
+      newBoard[move] = 'O';
       if (calculateWinner(newBoard) === 'O') {
-        return move; // Winning move found
+        return move; 
       }
     }
 
-    // Check for blocking move
+
     for (let i = 0; i < availableMoves.length; i++) {
       const move = availableMoves[i];
       const newBoard = [...board];
-      newBoard[move] = 'X'; // Player's move
+      newBoard[move] = 'X'; 
       if (calculateWinner(newBoard) === 'X') {
-        return move; // Blocking move found
+        return move; 
       }
     }
 
-    // If no winning or blocking move, make a random move
+
     return availableMoves[Math.floor(Math.random() * availableMoves.length)];
   };
 
