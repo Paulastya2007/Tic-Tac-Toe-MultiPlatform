@@ -8,7 +8,7 @@ import GameModeSelection from './components/GameModeSelection';
 import About from './components/About';
 // Import your future PlayWithAI and PlayWithLocal components when you create them
 // import PlayWithAI from './components/PlayWithAI';
-// import PlayWithLocal from './components/PlayWithLocal';
+import PlayWithLocal from './components/PlayWithLocal';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +19,7 @@ export default function App() {
         <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
         <Stack.Screen name="GameModeSelection" component={GameModeSelection} options={{ headerShown: false }} />
         <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
+        <Stack.Screen name="PlayWithLocal" component={PlayWithLocal} options={{ headerShown: false }} />
         {/* Add other screens like PlayWithAI and PlayWithLocal here */}
         {/* <Stack.Screen name="PlayWithAI" component={PlayWithAI} /> */}
         {/* <Stack.Screen name="PlayWithLocal" component={PlayWithLocal} /> */}
