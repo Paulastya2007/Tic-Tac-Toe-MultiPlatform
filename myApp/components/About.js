@@ -1,20 +1,16 @@
-// components/Menu.js
+// components/About.js
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import QuitButton from './QuitButton'; // Import the QuitButton component
 
-const Menu = ({ navigation }) => {
+const About = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tic Tac Toe</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('GameModeSelection')}>
-        <Text style={styles.buttonText}>Start Game</Text>
+      <Text style={styles.title}>About</Text>
+      <Text style={styles.content}>This game is made by Paulastya Chakraborty</Text>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Text style={styles.buttonText}>Back</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About')}>
-        <Text style={styles.buttonText}>About</Text>
-      </TouchableOpacity>
-      <QuitButton /> {/* Add the QuitButton component */}
     </View>
   );
 };
@@ -25,24 +21,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#000',
+    padding: 20,
   },
   title: {
-    fontSize: 48,
+    fontSize: 36,
     color: '#0f0',
     fontFamily: 'monospace',
-    marginBottom: 50,
+    marginBottom: 20,
     textShadowColor: '#00f',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
   },
-  button: {
-    backgroundColor: '#333',
+  content: {
+    fontSize: 20,
+    color: '#fff',
+    fontFamily: 'monospace',
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+  backButton: {
+    backgroundColor: '#444',
     paddingVertical: 10,
     paddingHorizontal: 40,
-    marginVertical: 10,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#0f0',
+    borderColor: '#f00',
     alignItems: 'center',
   },
   buttonText: {
@@ -52,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Menu;
+export default About;
